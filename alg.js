@@ -5,6 +5,48 @@
 
 
 
+//generating data
+
+let genArray = []
+
+let nameArray = [
+'Amy',
+'Kate',
+'Molly',
+'Milly',
+'Kamila',
+'Nina',
+'Lola',
+'Sara',
+'Micky',
+'Natasha',
+'Lina',
+'Rina',
+'Rena',
+'Zoy',
+]
+
+
+function nameGen(nameArray) {
+	let num = Math.floor(Math.random() * nameArray.length);
+	return  nameArray[num]	
+}
+
+
+for(i=0; i < 1000; i++ ) {
+	
+	let genObj = {}
+	genObj.name = nameGen(nameArray)
+	genArray.push(genObj)
+
+}
+
+
+console.log('========genArray')
+console.log(genArray)
+
+
+
 let  personArray = [
 {
 	name: "Vi",
@@ -40,6 +82,8 @@ let  personArray = [
 
 
 
+
+
 let myInterests = ['run', 'science', 'games', 'code'];
 
 
@@ -65,8 +109,6 @@ for (let y=0; y< personArray.length; ++y){
 		};
 		
 	}; // выводит совпадения
-
-
 
 
 
