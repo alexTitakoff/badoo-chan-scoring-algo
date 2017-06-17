@@ -9,22 +9,10 @@
 
 let genArray = []
 
-let nameArray = [
-'Amy',
-'Kate',
-'Molly',
-'Milly',
-'Kamila',
-'Nina',
-'Lola',
-'Sara',
-'Micky',
-'Natasha',
-'Lina',
-'Rina',
-'Rena',
-'Zoy',
-]
+let nameArray = ['Amy', 'Kate','Molly', 'Milly', 'Kamila', 'Nina','Lola', 'Sara', 'Micky',
+'Natasha','Lina','Rina','Rena','Zoy',]
+
+let interestArray = ['iceream','run','eat','movies','pizza','science','code','c++','php','web','internet','rap','music','trap','red','apple','techology','serials','chill','rock','paint','youtube']
 
 
 function nameGen(nameArray) {
@@ -32,11 +20,28 @@ function nameGen(nameArray) {
 	return  nameArray[num]	
 }
 
+function interestGen(interestArray) {
+	//generate interests count
+	let count = Math.floor(Math.random() * 10)
+	let interestGenArray = []
 
-for(i=0; i < 1000; i++ ) {
+	for(let y=0; y < count; y++){
+		let num = Math.floor(Math.random() * interestArray.length);
+		interestGenArray.push(interestArray[num])	
+
+	} 
+
+	return  interestGenArray
+}
+
+
+
+for(let i=0; i < 10; i++ ) {
 	
 	let genObj = {}
 	genObj.name = nameGen(nameArray)
+	genObj.gender = 'female'
+	genObj.interests = interestGen(interestArray)
 	genArray.push(genObj)
 
 }
@@ -52,7 +57,7 @@ let  personArray = [
 	name: "Vi",
 	gender: "female",
 	age: "21", 
-	interests: ['run', 'eat', 'icecream'],
+	interests: ['run', 'eat', 'iceream'],
 
 },
 
@@ -60,21 +65,21 @@ let  personArray = [
 	name: "Alice",
 	gender: "female",
 	age: "22", 
-	interests: ['run', 'eat', 'icecream', 'code'] 
+	interests: ['run', 'eat', 'iceream', 'code'] 
 },
 
 {	
 	name: "Kate",
 	gender: "female",
 	age: "20", 
-	interests: ['music', 'icecream'] 
+	interests: ['music', 'iceream'] 
 },
 
 {	
 	name: "Nika",
 	gender: "female",
 	age: "21", 
-	interests: ['run', 'games', 'eat', 'icecream','science', 'code'] 
+	interests: ['run', 'games', 'eat', 'iceream','science', 'code'] 
 },
 ];
 
