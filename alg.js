@@ -9,12 +9,33 @@
 $(document).ready(function(argument) {
 //generating data
 
-let genArray = []
+let matchArray = [
+{
+	name: 'Lily',
+	gender: 'female',
+	age: 20,
+	interests: ['run', 'science', 'code', 'trap', 'chill','rock']
+
+},
+
+
+{
+	name: 'Miky',
+	gender: 'female',
+	age: 20,
+	interests: ['run','chill','rock', 'relax', 'science', 'code', 'trap', 'crossfir', 'future' ]
+
+},
+
+
+]
+
+let genShitArray = []
 
 let nameArray = ['Amy', 'Kate','Molly', 'Milly', 'Kamila', 'Nina','Lola', 'Sara', 'Micky',
 'Natasha','Lina','Rina','Rena','Zoy',]
 
-let interestArray = ['iceream','run','eat','movies','pizza','science','code','c++','php','web','internet','rap','music','trap','red','apple','techology','serials','chill','rock','paint','youtube']
+let interestArray = ['iceream','eat','movies','pizza','music','trap','red','apple','techology','serials','chill','rock','paint','youtube', 'maliby', 'pink', 'sex', 'travel', 'beverly hils']
 
 let ageArray = [18,19,20,21,22,23,24,25,26,27]
 
@@ -55,23 +76,24 @@ for(let i=0; i < 1000; i++ ) {
 	genObj.gender = 'female'
 	genObj.age = ageGen(ageArray)
 	genObj.interests = interestGen(interestArray)
-	genArray.push(genObj)
+	genShitArray.push(genObj)
 
 }
 
 
 console.log('========genArray')
-console.log(genArray)
+console.log(genShitArray)
 
 
 
 
 
 
-let  personArray = genArray
+let  personArray = genShitArray
+personArray = personArray.concat(matchArray)
 
 
-let myInterests = ['run', 'science', 'games', 'code'];
+let myInterests = ['run', 'science', 'code', 'trap', 'chill','rock', 'relax', 'crossfir', 'future' ];
 
 
 // цикл скорринга
@@ -141,6 +163,7 @@ personArray = personArray.sort(function (b, a) {
 // }
 
 
+console.log('scrorring array');
 console.log(personArray);
 
 
@@ -148,6 +171,8 @@ console.log(personArray);
 
 let grid = $('.grid_profils')
 console.log(grid)
+
+//первичный рендор
 for (let k = 0; k < personArray.length; k++ ) {
 
 	let cookInterstsData  
@@ -162,7 +187,7 @@ for (let k = 0; k < personArray.length; k++ ) {
 
 	}
 
-	$('<div class="col-md-3 profile "><div class="thumbnail"><img src="female_avatar.jpg" alt="..."><div class="caption"><h5>'+ personArray[k].name +'</h5><p><b>Age:</b> '+personArray[k].age +'</p><p><b>Iterests:</b> '+ cookInterstsData +' </p><p> <a href="#" class="btn btn-default" role="button">See Profile</a></p></div></div></div>').appendTo(grid)
+	$('<div class="col-md-3 profile "><div class="thumbnail"><img src="female_avatar.jpg" alt="..."><div class="caption"><h5>'+ personArray[k].name +'</h5><p><b>Age:</b> '+personArray[k].age +'</p><p><b>Score:</b> '+personArray[k].score +'</p><p><b>Iterests:</b> '+ cookInterstsData +' </p><p> <a href="#" class="btn btn-default" role="button">See Profile</a></p></div></div></div>').appendTo(grid)
 
 }
 
